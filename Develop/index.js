@@ -2,11 +2,37 @@ const requirer = require('requirer');
 const fs = require('fs');
 const { default: inquirer } = require('inquirer');
 
+const generateReadMe = ({git, email, project, description, license, dependencies, test, note, contribution}) => 
+
+`
+#Generate Professional ReadMe file.
+
+#${git}
+
+#${email}
+
+#${project}
+
+#${description}
+
+#${license}
+
+#${dependencies}
+
+#${test}
+
+#${note}
+
+#${contribution}
+
+`
+
+
 const questions = [
     {
         type: 'input',
         message: 'What is your GitHub username?',
-        name: 'email'
+        name: 'git'
     },
     {
         type: 'input',
