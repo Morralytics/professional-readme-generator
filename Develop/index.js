@@ -1,5 +1,6 @@
 const requirer = require('requirer');
 const fs = require('fs');
+const { default: inquirer } = require('inquirer');
 
 const questions = [
     {
@@ -50,15 +51,18 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
 // fileName will be 'README.md'
 function writeToFile(fileName, answer) {
     fs.writeFile(fileName, answer, (err) => 
     err ? console.log(err) : console.log('Successfully created your professional ReadMe file!'));
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+    .prompt(questions)
+    .then((answer) => {
+        const generateReadMe = generateReadMe(answer);
+        writeToFile(generateReadMe, answer)})
+}
 
-// Function call to initialize app
 init();
