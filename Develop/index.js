@@ -51,11 +51,17 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        err ? console.log(err) : console.log('Success!');
+    });
+}
 
-// Function call to initialize app
+function init() {
+    inquirer
+        .promt(questions)
+        .then(writeToFile('README.md', answers))
+}
+
 init();
