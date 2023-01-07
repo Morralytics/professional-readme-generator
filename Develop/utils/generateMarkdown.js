@@ -146,7 +146,7 @@ ${data.test}
 
 ## Questions
 
-[Link to GitHub profile](github.com/${data.git})
+[Link to GitHub profile](https://github.com/${data.git})
 
 With further questions you can reach me via email at:
 

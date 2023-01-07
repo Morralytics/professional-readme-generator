@@ -26,7 +26,7 @@ npm i
 
 ## Usage
 
-This can be run through Node.js which will give you everything you need to create a ReadMe file.
+This can ve run through Node.js which will give you everything you need to create a high quality ReadMe file.
 
 ## License
 
@@ -50,7 +50,7 @@ npm test
 
 ## Questions
 
-[Link to GitHub profile](github.com/Volexity21)
+[Link to GitHub profile](https://github.com/Volexity21)
 
 With further questions you can reach me via email at:
 
