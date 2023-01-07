@@ -30,12 +30,12 @@ const questions = [
         type: 'list',
         message: 'What kind of license should your project have?',
         name: 'license',
-        choices: ['MIT License', 'Apachie License 2.0', 'ISC License', 'GNU PGLv2']
+        choices: ['None', 'MIT License', 'Apachie License 2.0', 'ISC License', 'GNU PGLv2']
     },
     {
         type: 'input',
         message: 'What command should be run to install dependencies?',
-        name: 'dependencies'
+        name: 'installation'
     },
     {
         type: 'input',
