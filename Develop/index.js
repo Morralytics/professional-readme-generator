@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 const questions = [
     {
@@ -52,8 +53,10 @@ const questions = [
 ];
 
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
+function writeToFile(fileName, answers) {
+    const generateMarkdownContent = generateMarkdown(answers)
+
+    fs.writeFile(fileName, generateMarkdownContent, (err) => {
         err ? console.log(err) : console.log('Success!');
     });
 }
