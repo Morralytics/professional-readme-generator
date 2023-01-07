@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// We are able to pull the information from the external file by 'linking' it to this via require
 const generateMarkdown = require('./utils/generateMarkdown');
 
 const questions = [
@@ -54,14 +56,18 @@ const questions = [
 
 
 function writeToFile(fileName, answers) {
+    // We need to generate the README.md file using the answers from the user
+    // This means we create a variable to hold this information upon the prompt trigger
     const generateMarkdownContent = generateMarkdown(answers)
 
+    // Writes the file by accepting the name of the file, the content, followed by the callback function (error)
     fs.writeFile(fileName, generateMarkdownContent, (err) => {
         err ? console.log(err) : console.log('Success!');
     });
 }
 
 function init() {
+    // Simply initializes the promise
     inquirer
         .promt(questions)
         .then(writeToFile('README.md', answers))
