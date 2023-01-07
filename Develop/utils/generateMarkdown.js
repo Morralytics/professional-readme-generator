@@ -25,16 +25,16 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch(license) {
     case 'MIT License':
-      return `(https://opensource.org/licenses/MIT)`
+      `(https://opensource.org/licenses/MIT)`
       break;
     case 'Apachie License 2.0':
-      return `(https://opensource.org/licenses/Apache-2.0)`
+      `(https://opensource.org/licenses/Apache-2.0)`
       break;
     case 'ISC License':
-      return `(https://opensource.org/licenses/ISC)`
+      `(https://opensource.org/licenses/ISC)`
       break;
     case 'GNU PGLv2':
-      return `(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`
+      `(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`
       break;
     case 'None':
       return ``
@@ -44,59 +44,48 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  `${renderLicenseBadge(license)}
+  
+  ${renderLicenseLink(license)}`
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-    // ![GitHub License](https://img.shields.)
+${data.license}
 
-    ## Description
+## Description
 
-    // add description link (description)
+${data.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#installation)
+* [Installation](#installation)
 
-    * [Usage](#usage)
+* [Usage](#usage)
     
-    * [License](#license)
+* [License](#license)
 
-    * [Contributing](#contributing)
+* [Contributing](#contributing)
 
-    * [Tests](#tests)
+* [Tests](#tests)
 
-    * [Questions](#questions)
+* [Questions](#questions)
 
-    ## Installation
+## Installation
 
-   // add installation link (installation)
+${data.installation}
 
-    ## Repo and Deployed Site Links
+## Usage
 
-    Here is a link to the git hub repo: https://github.com/Volexity21/Yoda-Translator
+## Contributing
 
-    Here is the link to the deployed site: https://volexity21.github.io/Yoda-Translator/
+## Tests
 
-    ## Screenshots
-    Here are several images of the live application:
-    ![.](./assets/images/Screenshot%202022-12-16%20115124.png)
-    ![.](./assets/images/Screenshot%202022-12-16%20115210.png)
-    ![.](./assets/images/Screenshot%202022-12-16%20115155.png)
-
-    ## Questions
-
-    //(WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile (github.com/(git))
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions)
-
-    The team hopes to implement the following wishlist items in future updates:
-
-    - Append random Yoda picture to second page underneath appended quote
-    - Add sound effect (e.g. blaster, light saber) on button click of generate button
-    - Add history button and additional local storage functionality to allow user to see history of recently translated quotes`;
+## Questions
+${data.git}
+${data.email}`
 }
 
 module.exports = generateMarkdown;
