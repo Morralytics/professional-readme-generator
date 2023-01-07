@@ -19,7 +19,7 @@ const questions = [
     {
         type: 'input',
         message: "What is your project's name?",
-        name: 'project'
+        name: 'title'
     },
     {
         type: 'input',
@@ -69,8 +69,10 @@ function writeToFile(fileName, answers) {
 function init() {
     // Simply initializes the promise
     inquirer
-        .promt(questions)
-        .then(writeToFile('README.md', answers))
+        .prompt(questions)
+        .then((answers) => {
+            writeToFile('README.md', answers);
+        });
 }
 
 init();
